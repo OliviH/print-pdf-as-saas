@@ -18,5 +18,5 @@ services:
       - PORT=$PORT
       - TIME_PERSIST=$TIME_PERSIST
     # TESTING
-    ports:
-      - $PORT:$PORT
+    # ports:
+    #   - $PORT:$PORT

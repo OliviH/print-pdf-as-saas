@@ -105,7 +105,7 @@ const pdf = (
   });
 };
 /** TEST */
-pdf()
+// pdf()
 
 
 module.exports = { pdf, deleteFile };
