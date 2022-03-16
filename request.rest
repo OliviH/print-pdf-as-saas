@@ -1,0 +1,12 @@
+GET http://print-pdf.localhost/
+
+###
+POST http://print-pdf.localhost/
+content-type: application/json
+
+{
+    "html": "<h1>PDF TEST</h1>",
+    "options" : {
+        "path" : ""
+    }
+}

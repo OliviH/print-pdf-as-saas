@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  pdf_saas:
+    container_name: ${PROJECT_NAME}
+    build: ./saas
+    restart: unless-stopped
+    env_file: ./.env
+    volumes:
+      - ./saas/src:/app/src
+      - ./drive_place:/var/lib/drive
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.services.${PROJECT_NAME}_web.loadbalancer.server.port=${PORT}"
+      - "traefik.http.routers.${PROJECT_NAME}_web.entrypoints=http"
+      - "traefik.http.routers.${PROJECT_NAME}_web.rule=Host(`${HOST}`)"
+    environment:
+      - PORT=$PORT
+      - TIME_PERSIST=$TIME_PERSIST
+    # TESTING
+    ports:
+      - $PORT:$PORT

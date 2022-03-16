@@ -1,0 +1,19 @@
+{
+    "name": "pdf_saas",
+    "version": "1.0.0",
+    "main": "src/main.js",
+    "license": "MIT",
+    "scripts": {
+      "start": "nodemon src/main.js",
+      "run": "node src/main.js"
+    },
+    "dependencies": {
+      "express": "^4.17.2",
+      "fs-extra": "^10.0.0",
+      "puppeteer": "^13.0.1"
+    },
+    "devDependencies": {
+      "nodemon": "^2.0.15"
+    }
+  }
+  
